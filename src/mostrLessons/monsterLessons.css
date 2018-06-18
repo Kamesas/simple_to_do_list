@@ -1,3 +1,10 @@
 .monsterLessons h1 {
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: green;
+}
+
+.dropDown button {
+	cursor: pointer;
 }

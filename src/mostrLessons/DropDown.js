@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import "./monsterLessons.css"
 
 class DropDown extends Component {
 
@@ -9,24 +8,24 @@ class DropDown extends Component {
 	
 
 	toggleState = () => {
-		console.log(this.state.isOpened)
+		//console.log(this.state.isOpened)
 		this.setState({
 			isOpened: !this.state.isOpened
 		})
 	}
 
   render() {
+  	//console.log(this.props.itemsFromIndexJS)
+
   	let Open; 
   	if (this.state.isOpened) {
-  		Open = <ul >
-					<li>Item 1</li>
-					<li>Item 2</li>
-        </ul>
+  		Open =  <ul >
+								{this.props.itemsFromIndexJS}
+			        </ul>
   		
   	}
     return (
       <div className="dropDown">
-        <h2 >DropDown</h2>
         <button onClick={this.toggleState}>Меню{this.state.isOpened ? " X" : " ↓"}</button>
         {Open}        
       </div>
