@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DropDown from "./DropDown.js"
 import RegistrationForm from "./RegistrationForm.js"
+import RefsLesson from "./RefsLesson.js"
 
 class Header extends Component {
 
@@ -16,7 +17,8 @@ class Header extends Component {
     return (
       <div>
         <DropDown itemsFromIndexJS = {mapMenuItems} />
-        <RegistrationForm />        
+        <RegistrationForm /> 
+        <RefsLesson />       
       </div>
     );
   }
