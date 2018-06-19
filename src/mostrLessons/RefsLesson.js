@@ -9,11 +9,11 @@ export default class RefsLesson extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<React.Fragment>
 				<br/><strong>RefsLessons</strong><br/>
 				<input type="text" ref={(input) => this.testInput = input} />
 				<button onClick={this.handlerClick} >Клик</button>
-			</div>
+			</React.Fragment>
 		);
 	}
 }
