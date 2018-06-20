@@ -53,6 +53,14 @@ export default class MonsterLessonRedux extends React.Component {
           install React-Redux => <i> npm install react-redux --save --save-exact</i>
           install Redux-Thunk => <i> npm i redux-thunk --save </i>
           install Redux-Devtools-Extension => <i> npm i redux-devtools-extension --save </i>
+          install React-Router => <i> npm i react-router --save </i>
+          install React-Router-Dom => <i> npm i react-router-dom --save </i>
+
+          npm uninstall <name> удаляет модуль из node_modules, но не package.json
+          npm uninstall <name> --save также удалить из dependencies в package.json
+          npm uninstall <name> --save-dev также удалить из devDependencies в package.json
+          npm -g uninstall <name> --save также удалите его глобально
+          
         </h5>
 
         <input type="text" value={this.state.valueTrackInput}  onChange={this.inputTrackChange} />
