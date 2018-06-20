@@ -26,7 +26,7 @@ class App extends Component {
 	        <button onClick={this.addTrack.bind(this)}>AddTrack</button>
 	        <ul>
 	        	{this.props.tracks.map((item, index) => 
-	        		<li key={index}>{item}</li>
+	        		<li key={index}>{item.name}</li>
 	        	)}
 	        </ul>
 
@@ -42,8 +42,12 @@ export default connect(
 		tracks: state.tracks
 	}),
 	dispatch => ({
-		onAddTrack: (trackName) => {
-			dispatch({type: 'ADD_TRACK', payload: trackName})
+		onAddTrack: (name) => {
+			const payload = {
+				id: Date.now().toString(),
+				name
+			}
+			dispatch({type: 'ADD_TRACK', payload})
 		}
 	})
 )(App);
