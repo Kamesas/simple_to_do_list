@@ -5,40 +5,12 @@ import {createStore} from 'redux';
 import './index.css';
 import App from './App';
 
-const initialState = {
-	tracks: [
-	"Smells like spirit",
-	"Enter Sandman"
-	],
-	playlist: [
-	"My work playlist",
-	"My home playlist"
-	]
-}
-
-function playlist(state = initialState, action) {
-  console.log("action => ", action);
-  if (action.type === 'ADD_TRACK') {
-    return {
-    	...state,
-    	tracks: [...state.tracks, action.payload]
-    };      
-  } else if (action.type === 'DELETE_TRACK') {
-    return state;
-  } else if (action.type === 'ADD_PLAYLIST') {
-    return state;
-  } else if (action.type === 'DELETE_PLAYLIST') {
-    return state;
-  }
-  return state;
-}
-
-const store = createStore(playlist, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
+import reducer from './reducers'
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-									<Provider store={store}>
-										<App />
-									</Provider>,
-									document.getElementById('root')
-								);
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
