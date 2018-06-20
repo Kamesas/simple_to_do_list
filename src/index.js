@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-//import {createStore} from 'redux';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
@@ -11,6 +10,7 @@ import { HashRouter, Route} from 'react-router-dom';
 
 import './index.css';
 import App from './App';
+import About from './About';
 
 import reducer from './reducers'
 
@@ -21,6 +21,7 @@ ReactDOM.render(
     <HashRouter>
      <div>
        <Route exact path="/" component={App}/>
+       <Route exact path="/about" component={About}/>
      </div>
     </HashRouter>
   </Provider>,
