@@ -4,7 +4,7 @@ const initialState = [
 ];
 
 export default function playlist(state = initialState, action) {
-  console.log("action => ", action);
+  //console.log("action => ", action);
   if (action.type === 'ADD_PLAYLIST') {
     return [
       ...state.playlists,

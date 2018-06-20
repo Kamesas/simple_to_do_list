@@ -1,38 +1,42 @@
 import React, { Component } from 'react';
-//import MonsterLessons from './mostrLessons/index';
-//import MonsterLessonRedux from './monsterLessonRedux/index';
 import {connect} from 'react-redux';
 
 class App extends Component {
 
 	addTrack() {
-		if (this.trackInput.value !== '') {
-			console.log("add track btn => ", this.trackInput.value);
+		if (this.trackInput.value !== '') {			
 			this.props.onAddTrack(this.trackInput.value);
 			this.trackInput.value = '';
 		}
   }
 
+  findTrack() {
+  	console.log(this.searchInput.value);
+  	this.props.onFindTrack(this.searchInput.value);
+  }
+
   render() {
   	console.log("testStore => ", this.props.tracks)
     return (
-      <div className="App">
-        {/*<MonsterLessons />*/}
-        {/*<MonsterLessonRedux />*/}
-
         <React.Fragment>      
 
-	        <input type="text" ref={(input) => {this.trackInput = input}}/>
-	        <button onClick={this.addTrack.bind(this)}>AddTrack</button>
+	        <div>
+	        	<input type="text" ref={(input) => {this.trackInput = input}}/>
+	        	<button onClick={this.addTrack.bind(this)}>AddTrack</button>
+	        </div>
+						<br/>
+	         <div>
+	        	<input type="text" ref={(input) => {this.searchInput = input}}/>
+	        	<button onClick={this.findTrack.bind(this)}>Find track</button>
+	        </div>
+
 	        <ul>
 	        	{this.props.tracks.map((item, index) => 
 	        		<li key={index}>{item.name}</li>
 	        	)}
 	        </ul>
 
-      </React.Fragment>
-
-      </div>
+      </React.Fragment>     
     );
   }
 }
@@ -48,6 +52,9 @@ export default connect(
 				name
 			}
 			dispatch({type: 'ADD_TRACK', payload})
+		},
+		onFindTrack: (name) => {
+			dispatch({ type: 'FIND_TRACK', payload: name})
 		}
 	})
 )(App);
