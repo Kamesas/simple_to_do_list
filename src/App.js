@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {getTracks} from './actions/tracks'
 
 class App extends Component {
 
@@ -61,15 +62,7 @@ export default connect(
 			dispatch({ type: 'FIND_TRACK', payload: name})
 		},
 		onGetTracks: () => {
-			const asyncGetTracks = () => {
-		    return dispatch => {
-		      setTimeout(() => {
-		        console.log('I got tracks');
-		        dispatch({ type: 'FETCH_TRACKS_SUCCESS', payload: [] });
-		      }, 2000)
-		    }
-		  }
-		  dispatch(asyncGetTracks());
+		  dispatch(getTracks());
 		}
 	})
 )(App);
