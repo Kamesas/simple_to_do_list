@@ -51,6 +51,8 @@ export default class MonsterLessonRedux extends React.Component {
         <h5>
           install Redux => <i>npm install redux --save --save-exact</i>
           install React-Redux => <i> npm install react-redux --save --save-exact</i>
+          install Redux-Thunk => <i> npm i redux-thunk --save </i>
+          install Redux-Devtools-Extension => <i> npm i redux-devtools-extension --save </i>
         </h5>
 
         <input type="text" value={this.state.valueTrackInput}  onChange={this.inputTrackChange} />
