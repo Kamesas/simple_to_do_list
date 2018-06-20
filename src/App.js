@@ -43,7 +43,7 @@ class App extends Component {
 
 export default connect(
 	state => ({
-		tracks: state.tracks
+		tracks: state.tracks.filter(track => track.name.includes(state.filterTracks))
 	}),
 	dispatch => ({
 		onAddTrack: (name) => {
