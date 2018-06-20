@@ -1,32 +1,12 @@
 import React from 'react';
-import {createStore} from 'redux'; 
 
-function playlist(state = [], action) {
-  console.log("action => ", action);
-  if (action.type === 'ADD_TRACK') {
-    return [
-      ...state,
-      action.payload
-    ]
-  }
-  return state;
-}
 
-const store = createStore(playlist);
-console.log('начальное состояние стора => ', store.getState());
 
-store.subscribe(() => {
-  console.log("subscribe/ store.getState => ", store.getState());
-})
+// store.subscribe(() => {
+//   console.log("subscribe/ store.getState => ", store.getState());
+// })
 
-store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like spirit'});
-
-//const addTrackBtn = document.getElementsByClassName("addTrack")[0];
-// const addTrackBtn =  document.querySelectorAll(".addTrack")[0];
-// addTrackBtn.addEventListener('click', () => {
-//   const trackName = document.querySelectorAll('.trackInput')[0].value;
-//   console.log('track name', trackName);
-// });
+// store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like spirit'});
 
 export default class MonsterLessonRedux extends React.Component {
 
@@ -70,6 +50,7 @@ export default class MonsterLessonRedux extends React.Component {
 
         <h5>
           install Redux => <i>npm install redux --save --save-exact</i>
+          install React-Redux => <i> npm install react-redux --save --save-exact</i>
         </h5>
 
         <input type="text" value={this.state.valueTrackInput}  onChange={this.inputTrackChange} />
