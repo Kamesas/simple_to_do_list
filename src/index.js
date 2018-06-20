@@ -22,7 +22,13 @@ function playlist(state = initialState, action) {
     return {
     	...state,
     	tracks: [...state.tracks, action.payload]
-    };  
+    };      
+  } else if (action.type === 'DELETE_TRACK') {
+    return state;
+  } else if (action.type === 'ADD_PLAYLIST') {
+    return state;
+  } else if (action.type === 'DELETE_PLAYLIST') {
+    return state;
   }
   return state;
 }
